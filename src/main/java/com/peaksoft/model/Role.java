@@ -14,8 +14,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "roles")
-@Getter
-@Setter
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Role implements GrantedAuthority {
@@ -33,6 +31,14 @@ public class Role implements GrantedAuthority {
 
     @Override
     public String getAuthority() {
+        return role;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getRole() {
         return role;
     }
 }

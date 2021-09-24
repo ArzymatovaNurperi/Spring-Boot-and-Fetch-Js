@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -31,14 +32,12 @@
 </head>
 <body>
 
-<!--Navbar-->
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <a class="navbar-brand" href="#">Admin</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!--Logout-->
     <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -108,7 +107,7 @@
                                 <script>
                                     function register() {
                                         const register = document.getElementById('register');
-                                        let url = 'http://localhost:8888/api';
+                                        let url = 'http://localhost:8080/api';
 
                                         register.addEventListener('click', async function (event) {
 
@@ -183,7 +182,7 @@
 
                                     //Delete user
                                     function deleteUser(id) {
-                                        fetch('http://localhost:8888/delete/' + id,{
+                                        fetch('http://localhost:8080/delete/' + id,{
                                             method:"DELETE"
                                         })
                                         window.location.reload(true);
@@ -212,7 +211,7 @@
                                             roles.push(role_a);
                                         }
 
-                                        fetch('http://localhost:8888/edit',{
+                                        fetch('http://localhost:8080/edit',{
                                             method: 'PUT',
                                             headers: {
                                                 'Content-Type': 'application/json'
@@ -228,7 +227,7 @@
                                         });  window.location.reload(true);}
 
                                     function findById(id){
-                                        fetch('http://localhost:8888/find/' + id)
+                                        fetch('http://localhost:8080/find/' + id)
                                             .then(response => response.json())
                                             .then(data =>{
 
@@ -255,7 +254,7 @@
                                             })
                                     }
 
-                                    let url2 = 'http://localhost:8888/getUsers';
+                                    let url2 = 'http://localhost:8080/getUsers';
                                     fetch(url2)
                                         .then(response => response.json())
                                         .then(data => {

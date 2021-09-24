@@ -14,8 +14,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-@Getter
-@Setter
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class User implements UserDetails {
@@ -47,6 +45,26 @@ public class User implements UserDetails {
     @Override
     public String getUsername() {
         return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
     }
 
     @Override
